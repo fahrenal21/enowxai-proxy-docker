@@ -1,0 +1,8 @@
+data/
+config/
+.git/
+.env
+.env.*
+node_modules/
+*.log
+*.tmp

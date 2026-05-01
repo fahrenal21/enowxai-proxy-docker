@@ -1,0 +1,38 @@
+services:
+  enowxai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: enowxai-proxy
+    restart: unless-stopped
+    ports:
+      - "1430:1430"
+      - "1431:1431"
+    volumes:
+      - ./data:/root/.enowxai
+    environment:
+      - TZ=UTC
+    networks:
+      - enowxai-network
+
+  enowxai-shim:
+    build:
+      context: ./shim
+      dockerfile: Dockerfile
+    container_name: enowxai-shim
+    restart: unless-stopped
+    depends_on:
+      - enowxai
+    ports:
+      - "1432:1432"
+    environment:
+      - SHIM_HOST=0.0.0.0
+      - SHIM_PORT=1432
+      - ENOWXAI_UPSTREAM=http://enowxai:1430/v1
+      - SHIM_MAX_RETRIES=2
+    networks:
+      - enowxai-network
+
+networks:
+  enowxai-network:
+    driver: bridge

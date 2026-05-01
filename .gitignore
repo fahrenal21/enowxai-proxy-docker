@@ -1,0 +1,31 @@
+# Runtime data and credentials
+data/
+config/
+.env
+.env.*
+!.env.example
+
+# enowxai local state
+auth.json
+machine_id
+request_logs.jsonl
+*.db
+*.db-shm
+*.db-wal
+
+# Logs and temporary files
+*.log
+*.tmp
+tmp/
+temp/
+
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+coverage/
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
