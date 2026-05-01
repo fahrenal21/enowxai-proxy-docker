@@ -1,9 +1,30 @@
 FROM debian:bookworm-slim
 
-# Install dependencies
+# Install dependencies including browser automation libraries
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
+    # Browser automation dependencies for Playwright/Camoufox
+    libgtk-3-0 \
+    libdbus-glib-1-2 \
+    libxt6 \
+    libpci3 \
+    libasound2 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libgbm1 \
+    libxkbcommon0 \
+    libpango-1.0-0 \
+    libcairo2 \
+    libnss3 \
+    libcups2 \
+    libxss1 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    fonts-liberation \
+    libappindicator3-1 \
+    xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Create app directory
