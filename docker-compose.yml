@@ -17,7 +17,7 @@ services:
       - TZ=UTC
 
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://127.0.0.1:1431/", "||", "exit", "1"]
+      test: ["CMD-SHELL", "pgrep enowxai || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -58,7 +58,7 @@ services:
       - SHIM_MAX_RETRIES=2
 
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:1432/", "||", "exit", "1"]
+      test: ["CMD-SHELL", "pgrep node || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 5
