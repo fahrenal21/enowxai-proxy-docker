@@ -17,11 +17,11 @@ services:
       - TZ=UTC
 
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:1430/v1/models"]
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:1431/", "||", "exit", "1"]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 40s
+      retries: 5
+      start_period: 60s
 
     labels:
       # Dashboard on dashboard.fahrenal.dev
@@ -58,11 +58,11 @@ services:
       - SHIM_MAX_RETRIES=2
 
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:1432/v1/models"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:1432/", "||", "exit", "1"]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 20s
+      retries: 5
+      start_period: 30s
 
     labels:
       # API on ai.fahrenal.dev
