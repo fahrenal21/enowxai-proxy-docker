@@ -15,6 +15,9 @@ services:
 
     environment:
       - TZ=UTC
+      - ENOWXAI_HOST=0.0.0.0
+      - HOST=0.0.0.0
+      - BIND_ADDRESS=0.0.0.0
 
     healthcheck:
       test: ["CMD-SHELL", "pgrep enowxai || exit 1"]
