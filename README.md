@@ -32,13 +32,35 @@ Long documents / plans / PRDs / specs
 | `enowxai-shim` | `1432` | Safe gateway for OpenCode: forces upstream non-stream, validates tool arguments, and converts back to SSE. |
 | `scripts/planning-safe.mjs` | - | Wrapper for creating plans/PRDs/specs without OpenCode's `write` tool. |
 
+## Deployment Options
+
+### 🚀 Option 1: Dokploy (Production - Recommended)
+
+Deploy dengan domain dan SSL otomatis menggunakan Dokploy.
+
+**Quick Start:**
+1. Setup DNS records untuk domain kamu
+2. Di Dokploy: Create Project → Add Compose Service → Connect Repo
+3. Deploy!
+
+📖 **Dokumentasi lengkap:** [`QUICK-START-DOKPLOY.md`](QUICK-START-DOKPLOY.md)
+📚 **Troubleshooting & detail:** [`DOKPLOY-DEPLOYMENT.md`](DOKPLOY-DEPLOYMENT.md)
+
+**Hasil:**
+- API: `https://ai.yourdomain.com/v1`
+- Dashboard: `https://dashboard.yourdomain.com`
+- SSL certificates otomatis (Let's Encrypt)
+- Auto-restart & healthcheck monitoring
+
+### 🏠 Option 2: Local Development
+
 ## Prerequisites
 
 - Docker + Docker Compose plugin.
 - Node.js 20+ on host to run `scripts/planning-safe.mjs`.
 - OpenCode config with valid `enowxlabs` provider `apiKey`.
 
-Example OpenCode config:
+Example OpenCode config (local):
 
 ```json
 {
@@ -55,7 +77,7 @@ Example OpenCode config:
 
 > Point OpenCode to `1432`, not directly to `1430`, to route through the shim.
 
-## Quick start
+## Quick start (Local)
 
 ```bash
 docker compose up -d --build
