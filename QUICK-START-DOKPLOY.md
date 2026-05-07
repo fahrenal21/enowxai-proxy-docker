@@ -9,6 +9,7 @@ Panduan singkat deploy ke Dokploy dengan domain `fahrenal.dev`.
   - `dashboard.fahrenal.dev` → IP Server
 - [ ] Dokploy sudah running
 - [ ] Repository sudah di-push ke GitHub/GitLab
+- [ ] (Optional) Cek [`ENVIRONMENT-SETTINGS.md`](ENVIRONMENT-SETTINGS.md) jika perlu custom environment
 
 ## 📝 Langkah Deploy (5 Menit)
 

@@ -11,7 +11,7 @@ services:
       - "1431"
 
     volumes:
-      - ./data:/root/.enowxai
+      - enowxai-data:/root/.enowxai
 
     environment:
       - TZ=UTC
@@ -86,3 +86,7 @@ networks:
     driver: bridge
   dokploy-network:
     external: true
+
+volumes:
+  enowxai-data:
+    driver: local

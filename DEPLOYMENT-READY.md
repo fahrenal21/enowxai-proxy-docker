@@ -9,6 +9,7 @@ Project sudah siap untuk deploy ke Dokploy dengan domain `fahrenal.dev`.
 ✅ Healthcheck untuk monitoring
 ✅ Network configuration (dokploy-network)
 ✅ SSL/TLS auto-configuration
+✅ Environment variables (default values)
 
 **Domain mapping:**
 - `ai.fahrenal.dev` → enowxai-shim:1432 (API)
@@ -18,6 +19,7 @@ Project sudah siap untuk deploy ke Dokploy dengan domain `fahrenal.dev`.
 
 ✅ [`QUICK-START-DOKPLOY.md`](QUICK-START-DOKPLOY.md) - Panduan cepat 5 menit
 ✅ [`DOKPLOY-DEPLOYMENT.md`](DOKPLOY-DEPLOYMENT.md) - Dokumentasi lengkap + troubleshooting
+✅ [`ENVIRONMENT-SETTINGS.md`](ENVIRONMENT-SETTINGS.md) - Environment variables guide
 ✅ [`README.md`](README.md) - Updated dengan section Dokploy
 
 ## 🚀 Next Steps - Deploy Sekarang!
