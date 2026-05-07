@@ -1,9 +1,12 @@
 FROM debian:bookworm-slim
 
-# Install dependencies including browser automation libraries
+# Install dependencies including browser automation libraries and Python
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
+    python3 \
+    python3-pip \
+    python3-venv \
     # Browser automation dependencies for Playwright/Camoufox
     libgtk-3-0 \
     libdbus-glib-1-2 \
@@ -37,7 +40,7 @@ RUN curl -sSL https://api.enowxlabs.com/install/enowx-ai | sh
 ENV PATH="/root/.local/bin:${PATH}"
 
 # Expose enowxai daemon port
-EXPOSE 1430
+EXPOSE 1430 1431
 
 # Run enowxai daemon
 CMD ["enowxai", "__daemon"]
